@@ -58,10 +58,10 @@ class splashScreen():
         canvas.create_text(300,260, text='Name\t\t  Roll Number', font=("Times 10 bold",19),fill = 'white') 
         canvas.create_text(180,330, text='Abdul Rafay Atiq \nHuzaifa Ali \nIqra Shahid \nMinahil Moiz', font=("Times 10 bold",16),fill = 'white')
         canvas.create_text(420,330, text='B21110106004 \nB21110106025 \nB21110106027 \nB21110106033', font=("Times 10 bold",15),fill = 'white')
-        self.btn1 = tk.Button(f, text="Existing Database",command=lambda: self.Open())
+        self.btn1 = tk.Button(f, text="Connect Database",command=lambda: self.Open())
         self.btn1_wind = canvas.create_window(290,440,anchor='center',window=self.btn1)
-        self.btn2 = tk.Button(f, text="New Database", command=lambda: self.Create())
-        self.btn2_wind = canvas.create_window(290,480,anchor='center',window=self.btn2)
+        # self.btn2 = tk.Button(f, text="New Database", command=lambda: self.Create())
+        # self.btn2_wind = canvas.create_window(290,480,anchor='center',window=self.btn2)
         canvas.grid()
         self.root.eval('tk::PlaceWindow %s center' % self.root.winfo_toplevel())
         self.root.mainloop()
@@ -80,15 +80,15 @@ class splashScreen():
             self.root.destroy()
             return file_name
 
-    def Create(self):
-        self.filename.clear()
-        ftypes = [('database', '*.db'), ('All files', '*')]
-        file_name = str(filedialog.asksaveasfilename(filetype=ftypes))
-        self.filename.append(file_name)
-        self.Data(file_name)
-        self.root.quit()  # stops mainloop
-        self.root.destroy()
-        return file_name
+    # def Create(self):
+    #     self.filename.clear()
+    #     ftypes = [('database', '*.db'), ('All files', '*')]
+    #     file_name = str(filedialog.asksaveasfilename(filetype=ftypes))
+    #     self.filename.append(file_name)
+    #     self.Data(file_name)
+    #     self.root.quit()  # stops mainloop
+    #     self.root.destroy()
+    #     return file_name
         
     def Data(self,x):
         db = sqlite3.connect(x)

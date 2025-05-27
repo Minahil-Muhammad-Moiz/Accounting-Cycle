@@ -498,36 +498,36 @@ class AccountingSystem():
         self.win.config(menu=menuBar)
         # Add menu items
         
-        # Add an Data entry Menu
-        entryMenu = Menu(menuBar, tearoff=0)
-        entryMenu.add_command(label="Journal Entry", command=lambda: insertJournalForm(self))
-        entryMenu.add_command(label="New Account", command=lambda: insertChartForm(self))
-        menuBar.add_cascade(label="Edit", menu=entryMenu)
+        # # Add an Data entry Menu
+        # entryMenu = Menu(menuBar, tearoff=0)
+        # entryMenu.add_command(label="Journal Entry", command=lambda: insertJournalForm(self))
+        # entryMenu.add_command(label="New Account", command=lambda: insertChartForm(self))
+        # menuBar.add_cascade(label="Edit", menu=entryMenu)
         
-        # Add an Data entry Menu
-        viewMenu = Menu(menuBar, tearoff=0)
-        viewMenu.add_command(label="View Journal", command=lambda: self.do_reptTransact(0))
-        viewMenu.add_command(label="View Transaction", command=lambda: getTransact(self))
-        viewMenu.add_command(label="View Accounts", command=lambda: self.do_reptChart())
-        viewMenu.add_command(label="View Ledger", command=lambda: fetchLedgerAccount(self))
-        viewMenu.add_separator()
-        viewMenu.add_command(label="Trial Balance", command=lambda: self.do_trialBalance())
-        menuBar.add_cascade(label="View", menu=viewMenu)
+        # # Add an Data entry Menu
+        # viewMenu = Menu(menuBar, tearoff=0)
+        # viewMenu.add_command(label="View Journal", command=lambda: self.do_reptTransact(0))
+        # viewMenu.add_command(label="View Transaction", command=lambda: getTransact(self))
+        # viewMenu.add_command(label="View Accounts", command=lambda: self.do_reptChart())
+        # viewMenu.add_command(label="View Ledger", command=lambda: fetchLedgerAccount(self))
+        # viewMenu.add_separator()
+        # viewMenu.add_command(label="Trial Balance", command=lambda: self.do_trialBalance())
+        # menuBar.add_cascade(label="View", menu=viewMenu)
         
-        # Add an Edit Menu
-        reportMenu = Menu(menuBar, tearoff=0)
-        reportMenu.add_command(label="Balance Sheet", command=lambda: self.do_balSheet())
-        reportMenu.add_command(label="Ledger Account", command=lambda: fetchLedgerAccount(self))
-        reportMenu.add_command(label="Income Report", command=lambda: self.do_RevandExp())
-        reportMenu.add_command(label="Expense Report", command=lambda: self.do_RevandExp())
-        menuBar.add_cascade(label="Reports", menu=reportMenu)
-        #.db into excel
-        excelMenu = Menu(menuBar, tearoff=0)
-        excelMenu.add_command(label="Convert all tables", command=lambda: dbtoexcel.all_worksheets(self))
-        excelMenu.add_command(label="Convert Ledger Account", command=lambda: dbtoexcel.worksheet2(self))
-        excelMenu.add_command(label="Convert Journal Entries", command=lambda: dbtoexcel.worksheet0(self))
-        excelMenu.add_command(label="Convert Chart of Accounts", command=lambda: dbtoexcel.worksheet1(self))
-        menuBar.add_cascade(label="Convert DB to Excel", menu=excelMenu)
+        # # Add an Edit Menu
+        # reportMenu = Menu(menuBar, tearoff=0)
+        # reportMenu.add_command(label="Balance Sheet", command=lambda: self.do_balSheet())
+        # reportMenu.add_command(label="Ledger Account", command=lambda: fetchLedgerAccount(self))
+        # reportMenu.add_command(label="Income Report", command=lambda: self.do_RevandExp())
+        # reportMenu.add_command(label="Expense Report", command=lambda: self.do_RevandExp())
+        # menuBar.add_cascade(label="Reports", menu=reportMenu)
+        # #.db into excel
+        # excelMenu = Menu(menuBar, tearoff=0)
+        # excelMenu.add_command(label="Convert all tables", command=lambda: dbtoexcel.all_worksheets(self))
+        # excelMenu.add_command(label="Convert Ledger Account", command=lambda: dbtoexcel.worksheet2(self))
+        # excelMenu.add_command(label="Convert Journal Entries", command=lambda: dbtoexcel.worksheet0(self))
+        # excelMenu.add_command(label="Convert Chart of Accounts", command=lambda: dbtoexcel.worksheet1(self))
+        # menuBar.add_cascade(label="Convert DB to Excel", menu=excelMenu)
 
 
 
